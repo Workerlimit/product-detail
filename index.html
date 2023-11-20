@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+    }
+
+    .product-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .carousel {
+      display: flex;
+      overflow: hidden;
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      padding: 20% 10% 2%;
+      box-sizing: border-box;
+    }
+
+    .product-description {
+      margin: 20px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    p {
+      color: #555;
+    }
+
+    .user-comments {
+      margin-top: 20px;
+      padding: 10px 40px 30px;
+
+    }
+
+    .comment {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .comment p {
+      margin: 0;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      color: #f39c12;
+    }
+
+    .delivery-info {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .d-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="product-container">
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img class="product-image" src="https://m.media-amazon.com/images/I/41kvt-hl+iL._AC_UF894,1000_QL80_.jpg" alt="Product Image 1">
+      </div>
+      <div class="carousel-item">
+        <img class="product-image" src="https://ae01.alicdn.com/kf/Hdbfe4b2ac52f4a5c81321cfeebe89a5dt/Xiaomi-Mijia-Lint-Remover-Clothes-Fuzz-Pellet-Trimmer-Machine-Portable-Charge-Fabric-Shaver-Removes-For-Clothes.jpg" alt="Product Image 2">
+      </div>
+      <div class="carousel-item">
+        <img class="product-image" src="https://img.freepik.com/premium-photo/machine-removing-pellet-spools-from-clothes-fabric-blue-fabric-modern-electronic-device-updating-old-things_420054-1384.jpg" alt="Product Image 3">
+      </div>
+    </div>
+  </div>
+
+  <div class="product-description">
+    <h2>Pellet remover machine</h2>
+    <p>Manual pellet machine - is a powerful machine, allows you to quickly and effectively clean cashmere, wool and other materials. It has own battery, giving you about 1 hour of usage. There is a charger that you can use to charge this machine. You can easily see how full the container is through a window and clean it when needed.</p>
+    <p>KZT 4.990</p>
+  </div>
+
+  <div class="user-comments">
+    <h3>User Comments</h3>
+    <div class="comment">
+      <div class="d-flex">
+        <p>Madina</p>
+        <div class="rating">★★★★★</div>
+      </div>  
+      <p>OMG!!! It is amazing machine! I bought it yesterday, and now my clothes look as a new</p>
+    </div>
+    <div class="comment">
+      <div class="d-flex">
+        <p>Zhomart</p>
+        <div class="rating">★★★☆☆</div>
+      </div>
+      <p>So yeah, it's kinda good tool, but not perfect. I spent 1 hour for cleaning my sweater(( It is too long for busy people</p>
+    </div>
+  </div>
+
+  <div class="delivery-info">
+    <h3>Delivery: </h3>
+    <p>Almaty city: 22-23 November</p>
+    <p>Free shipping</p>
+  </div>
+</div>
+
+<script>
+  // Simple JavaScript for carousel functionality
+  const carouselInner = document.querySelector('.carousel-inner');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+
+  let currentIndex = 0;
+
+  function showCarouselItem(index) {
+    const translateValue = -index * 100 + '%';
+    carouselInner.style.transform = 'translateX(' + translateValue + ')';
+  }
+
+  // Change carousel item every 3 seconds (adjust as needed)
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    showCarouselItem(currentIndex);
+  }, 3000);
+</script>
+
+</body>
+</html>
